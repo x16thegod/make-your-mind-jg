@@ -1,9 +1,8 @@
 import { useParams, Link } from "react-router-dom";
-import { Share2, ArrowLeft } from "lucide-react";
+import { Share2, ArrowLeft, Twitter, Facebook } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsCard from "@/components/NewsCard";
-import SectionHeader from "@/components/SectionHeader";
 import { getArticleById, articles } from "@/data/mockArticles";
 
 const ArticlePage = () => {
@@ -14,12 +13,13 @@ const ArticlePage = () => {
     return (
       <div className="min-h-screen bg-background">
         <Header />
-        <div className="container py-20 text-center">
-          <h1 className="font-serif text-4xl mb-4">Artigo não encontrado</h1>
-          <p className="text-muted-foreground font-sans">
-            A gráfica está silenciosa. Este artigo não existe.
+        <div className="container py-24 text-center max-w-xl mx-auto">
+          <span className="meta-text">Erro 404</span>
+          <h1 className="font-serif text-4xl md:text-5xl mt-4 mb-4">Artigo não encontrado</h1>
+          <p className="text-muted-foreground font-sans text-lg leading-relaxed">
+            A gráfica está silenciosa. Este artigo não existe ou foi removido.
           </p>
-          <Link to="/" className="mt-6 inline-block font-mono text-sm text-primary uppercase tracking-wider hover:underline">
+          <Link to="/" className="mt-8 inline-block font-mono text-[11px] text-primary uppercase tracking-[0.12em] hover:text-foreground transition-colors">
             ← Voltar ao início
           </Link>
         </div>
@@ -38,101 +38,130 @@ const ArticlePage = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="container py-8">
-        <Link
-          to="/"
-          className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-muted-foreground hover:text-foreground transition-colors mb-8"
-        >
-          <ArrowLeft size={14} />
-          Voltar
-        </Link>
+      <main>
+        {/* Top meta bar */}
+        <div className="container pt-6 pb-0">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft size={14} strokeWidth={1.5} />
+            Voltar
+          </Link>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          {/* Article */}
-          <article className="lg:col-span-8">
-            <span className="category-tag bg-accent text-accent-foreground">
-              {article.category}
-            </span>
+        <div className="container py-6 md:py-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
+            {/* Article content */}
+            <article className="lg:col-span-8">
+              {/* Category */}
+              <span className="font-mono text-[11px] font-bold uppercase tracking-[0.15em] text-primary">
+                {article.category}
+              </span>
 
-            <h1 className="mt-4 font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.1] tracking-tight">
-              {article.title}
-            </h1>
+              {/* Headline */}
+              <h1 className="mt-4 font-serif text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-bold leading-[1.08] tracking-[-0.03em] animate-fade-up">
+                {article.title}
+              </h1>
 
-            <p className="mt-4 font-sans text-lg text-muted-foreground leading-relaxed">
-              {article.excerpt}
-            </p>
+              {/* Dek/excerpt */}
+              <p className="mt-5 font-sans text-xl text-muted-foreground leading-relaxed animate-fade-up-delay-1">
+                {article.excerpt}
+              </p>
 
-            <div className="mt-4 flex items-center gap-3 meta-text">
-              <span>Reportado por {article.author}</span>
-              <span>●</span>
-              <span>{article.date}</span>
-              <span>●</span>
-              <span>{article.readTime} de leitura</span>
-            </div>
+              {/* Byline */}
+              <div className="mt-5 flex items-center gap-3 meta-text animate-fade-up-delay-2">
+                <span className="text-foreground font-semibold">Por {article.author}</span>
+                <span className="text-foreground/15">|</span>
+                <span>{article.date}</span>
+                <span className="text-foreground/15">|</span>
+                <span>{article.readTime} de leitura</span>
+              </div>
 
-            <div className="editorial-rule my-6" />
+              {/* Divider */}
+              <div className="editorial-rule my-6" />
 
-            <div className="overflow-hidden bg-muted mb-8">
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full aspect-video object-cover"
-              />
-            </div>
-
-            <div className="max-w-[65ch]">
-              {paragraphs.map((p, i) => (
-                <p
-                  key={i}
-                  className={`font-sans text-lg leading-[1.75] text-foreground/90 mb-6 ${
-                    i === 0 ? "drop-cap" : ""
-                  }`}
-                >
-                  {p}
-                </p>
-              ))}
-            </div>
-
-            <div className="editorial-rule my-8" />
-
-            {/* Share */}
-            <div className="flex items-center gap-4">
-              <span className="meta-text">Compartilhar</span>
-              <button className="p-2 hover:bg-muted transition-colors" aria-label="Compartilhar">
-                <Share2 size={18} />
-              </button>
-            </div>
-          </article>
-
-          {/* Sidebar */}
-          <aside className="lg:col-span-4">
-            <div className="lg:sticky lg:top-32 space-y-8">
-              <div>
-                <div className="editorial-rule-heavy mb-3" />
-                <h3 className="font-sans text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2">
-                  Sobre o autor
-                </h3>
-                <p className="font-serif text-lg font-semibold">{article.author}</p>
-                <p className="font-sans text-sm text-muted-foreground mt-1">
-                  Estudante-repórter do Jornal Glicério
+              {/* Hero image */}
+              <div className="overflow-hidden bg-foreground/5 mb-10">
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  className="w-full aspect-[16/10] object-cover"
+                />
+                <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-muted-foreground/60 px-0.5">
+                  Foto: Acervo Jornal Glicério
                 </p>
               </div>
 
-              {related.length > 0 && (
-                <div>
-                  <div className="editorial-rule-heavy mb-3" />
-                  <h3 className="font-sans text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4">
-                    Relacionados em {article.category}
-                  </h3>
-                  <div className="space-y-4">
-                    {related.map((a) => (
-                      <NewsCard key={a.id} article={a} variant="horizontal" />
-                    ))}
-                  </div>
+              {/* Body text */}
+              <div className="max-w-[65ch]">
+                {paragraphs.map((p, i) => (
+                  <p
+                    key={i}
+                    className={`font-sans text-[17px] leading-[1.8] text-foreground/85 mb-7 ${
+                      i === 0 ? "drop-cap" : ""
+                    }`}
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
+
+              {/* End mark */}
+              <div className="flex items-center gap-3 mt-10 mb-6">
+                <div className="w-2 h-2 bg-primary" />
+                <div className="editorial-rule flex-1" />
+              </div>
+
+              {/* Share bar */}
+              <div className="flex items-center gap-4">
+                <span className="meta-text">Compartilhar</span>
+                <div className="flex items-center gap-1">
+                  <button className="p-2.5 hover:bg-muted transition-colors" aria-label="Compartilhar">
+                    <Share2 size={16} strokeWidth={1.5} />
+                  </button>
+                  <button className="p-2.5 hover:bg-muted transition-colors" aria-label="Twitter">
+                    <Twitter size={16} strokeWidth={1.5} />
+                  </button>
+                  <button className="p-2.5 hover:bg-muted transition-colors" aria-label="Facebook">
+                    <Facebook size={16} strokeWidth={1.5} />
+                  </button>
                 </div>
-              )}
-            </div>
-          </aside>
+              </div>
+            </article>
+
+            {/* Sidebar */}
+            <aside className="lg:col-span-4">
+              <div className="lg:sticky lg:top-36 space-y-10">
+                {/* Author */}
+                <div>
+                  <div className="editorial-rule-accent mb-4" />
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                    Sobre o autor
+                  </span>
+                  <p className="font-serif text-xl font-bold mt-2">{article.author}</p>
+                  <p className="font-sans text-sm text-muted-foreground mt-1 leading-relaxed">
+                    Estudante-repórter do Jornal Glicério, cobrindo {article.category.toLowerCase()} e assuntos da comunidade escolar em Recife.
+                  </p>
+                </div>
+
+                {/* Related */}
+                {related.length > 0 && (
+                  <div>
+                    <div className="editorial-rule-heavy mb-4" />
+                    <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+                      Mais em {article.category}
+                    </span>
+                    <div className="mt-4 space-y-5">
+                      {related.map((a) => (
+                        <NewsCard key={a.id} article={a} variant="horizontal" />
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </aside>
+          </div>
         </div>
       </main>
 
