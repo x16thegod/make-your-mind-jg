@@ -66,15 +66,10 @@ const Footer = () => (
             <div className="flex flex-col gap-2.5 font-sans text-[13px] text-background/50">
               <span>Escola José Glicério</span>
               <span>Recife, PE, Brasil</span>
-              <a
-                href="https://wa.me/5581998735882"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-pernambuco-yellow transition-colors"
-              >
+              <span className="flex items-center gap-2">
                 <Phone size={13} />
-                (81) 9 9873-5882
-              </a>
+                (81) 9 9999-9999
+              </span>
               <span className="hover:text-pernambuco-yellow transition-colors cursor-pointer">
                 jornal@glicerio.edu.br
               </span>
