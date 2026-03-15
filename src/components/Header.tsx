@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu, X, User } from "lucide-react";
 import Logo from "./Logo";
 import { categories } from "@/data/mockArticles";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
