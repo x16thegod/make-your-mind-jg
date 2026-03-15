@@ -67,10 +67,10 @@ export const useAllArticles = () =>
     queryFn: async () => {
       const { data, error } = await supabase
         .from("articles")
-        .select("*, profiles:author_id(full_name)")
+        .select("*, profiles!articles_author_id_fkey(full_name)")
         .order("created_at", { ascending: false });
       if (error) throw error;
-      return data as DBArticle[];
+      return (data as any) as DBArticle[];
     },
   });
 
