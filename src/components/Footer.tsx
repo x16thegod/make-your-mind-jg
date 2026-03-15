@@ -90,12 +90,17 @@ const Footer = () => (
       </div>
 
       {/* Dev credit */}
-      <div className="mt-6 pt-6 border-t border-background/5 flex justify-center">
-        <span className="font-mono text-[11px] tracking-[0.08em]">
-          Dev:{" "}
-          <span className="font-bold dev-credit-cycle">
-            Pedro Henrique S. de Carvalho (x16TheGod)
-          </span>
+      <div className="flex items-center justify-center gap-1.5 mt-2">
+        <span className="font-mono text-[10px] tracking-[0.06em] text-background/25">
+          Developer:{" "}
+          <a
+            href="https://wa.me/5581998735882"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium dev-credit-cycle hover:underline"
+          >
+            Pedro Henrique S. de Carvalho
+          </a>
         </span>
       </div>
     </div>
