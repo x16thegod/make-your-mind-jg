@@ -81,7 +81,7 @@ const Footer = () => (
       <div className="h-px w-full bg-background/8 mt-14 mb-6" />
 
       {/* Dev credit */}
-      <div className="flex items-center justify-center mb-4">
+      <div className="flex items-center justify-start mb-4">
         <span className="font-mono text-[10px] tracking-[0.06em] text-background/30">
           Developer:{" "}
           <a
