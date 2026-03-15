@@ -1,8 +1,8 @@
 import { useParams, Link } from "react-router-dom";
-import { Share2, ArrowLeft, Twitter, Facebook } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import NewsCard from "@/components/NewsCard";
+import ShareButtons from "@/components/ShareButtons";
 import { getArticleById, articles } from "@/data/mockArticles";
 
 const ArticlePage = () => {
