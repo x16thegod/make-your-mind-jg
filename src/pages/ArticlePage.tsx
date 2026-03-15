@@ -110,20 +110,10 @@ const ArticlePage = () => {
               </div>
 
               {/* Share bar */}
-              <div className="flex items-center gap-4">
-                <span className="meta-text">Compartilhar</span>
-                <div className="flex items-center gap-1">
-                  <button className="p-2.5 hover:bg-muted transition-colors" aria-label="Compartilhar">
-                    <Share2 size={16} strokeWidth={1.5} />
-                  </button>
-                  <button className="p-2.5 hover:bg-muted transition-colors" aria-label="Twitter">
-                    <Twitter size={16} strokeWidth={1.5} />
-                  </button>
-                  <button className="p-2.5 hover:bg-muted transition-colors" aria-label="Facebook">
-                    <Facebook size={16} strokeWidth={1.5} />
-                  </button>
-                </div>
-              </div>
+              <ShareButtons
+                url={`${window.location.origin}/artigo/${article.id}`}
+                title={article.title}
+              />
             </article>
 
             {/* Sidebar */}
