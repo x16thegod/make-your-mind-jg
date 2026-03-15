@@ -1,8 +1,32 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu, X, User } from "lucide-react";
 import Logo from "./Logo";
 import { categories } from "@/data/mockArticles";
+import { useAuth } from "@/contexts/AuthContext";
+
+const HeaderAuthButton = () => {
+  const { user, isAdmin, isJournalist } = useAuth();
+  if (user) {
+    return (
+      <Link
+        to="/painel"
+        className="flex items-center gap-1.5 px-3 py-1.5 bg-pernambuco-blue text-primary-foreground font-mono text-[10px] font-bold uppercase tracking-[0.1em] hover:opacity-90 transition-opacity"
+      >
+        <User size={13} />
+        {isAdmin ? "Painel" : isJournalist ? "Painel" : "Minha Conta"}
+      </Link>
+    );
+  }
+  return (
+    <Link
+      to="/auth"
+      className="font-mono text-[11px] font-semibold uppercase tracking-[0.08em] px-4 py-2 hover:text-primary transition-colors"
+    >
+      Entrar
+    </Link>
+  );
+};
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -68,6 +92,7 @@ const Header = () => {
             >
               <Search size={18} strokeWidth={1.5} />
             </button>
+            <HeaderAuthButton />
           </div>
         </div>
       </div>
