@@ -7,9 +7,9 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1rem",
+      padding: "1.25rem",
       screens: {
-        "2xl": "1280px",
+        "2xl": "1320px",
       },
     },
     extend: {
@@ -53,6 +53,11 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        pernambuco: {
+          blue: "hsl(var(--pernambuco-blue))",
+          yellow: "hsl(var(--pernambuco-yellow))",
+          red: "hsl(var(--pernambuco-red))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

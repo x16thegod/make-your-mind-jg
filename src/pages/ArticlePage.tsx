@@ -39,58 +39,52 @@ const ArticlePage = () => {
       <Header />
 
       <main>
-        {/* Top meta bar */}
-        <div className="container pt-6 pb-0">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft size={14} strokeWidth={1.5} />
-            Voltar
-          </Link>
+        {/* Hero image full-bleed */}
+        <div className="relative overflow-hidden aspect-[21/9] md:aspect-[3/1]">
+          <img
+            src={article.image}
+            alt={article.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="hero-gradient absolute inset-0" />
+          <div className="absolute top-0 left-0 w-full h-1 editorial-rule-rainbow" />
+          <div className="absolute bottom-0 left-0 right-0">
+            <div className="container pb-8 md:pb-12">
+              <span className="category-tag-blue mb-3 inline-block">{article.category}</span>
+            </div>
+          </div>
         </div>
 
-        <div className="container py-6 md:py-10">
+        <div className="container py-8 md:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
             {/* Article content */}
             <article className="lg:col-span-8">
-              {/* Category */}
-              <span className="font-mono text-[11px] font-bold uppercase tracking-[0.15em] text-primary">
-                {article.category}
-              </span>
-
               {/* Headline */}
-              <h1 className="mt-4 font-serif text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-bold leading-[1.08] tracking-[-0.03em] animate-fade-up">
+              <h1 className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-black leading-[1.06] tracking-[-0.03em] animate-fade-up">
                 {article.title}
               </h1>
 
-              {/* Dek/excerpt */}
+              {/* Dek */}
               <p className="mt-5 font-sans text-xl text-muted-foreground leading-relaxed animate-fade-up-delay-1">
                 {article.excerpt}
               </p>
 
               {/* Byline */}
-              <div className="mt-5 flex items-center gap-3 meta-text animate-fade-up-delay-2">
-                <span className="text-foreground font-semibold">Por {article.author}</span>
-                <span className="text-foreground/15">|</span>
-                <span>{article.date}</span>
-                <span className="text-foreground/15">|</span>
-                <span>{article.readTime} de leitura</span>
+              <div className="mt-5 flex items-center gap-3 animate-fade-up-delay-2">
+                <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-pernambuco-blue font-bold">
+                  Por {article.author}
+                </span>
+                <span className="text-foreground/15">·</span>
+                <span className="meta-text">{article.date}</span>
+                <span className="text-foreground/15">·</span>
+                <span className="meta-text">{article.readTime} de leitura</span>
               </div>
 
-              {/* Divider */}
-              <div className="editorial-rule my-6" />
-
-              {/* Hero image */}
-              <div className="overflow-hidden bg-foreground/5 mb-10">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  className="w-full aspect-[16/10] object-cover"
-                />
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-wider text-muted-foreground/60 px-0.5">
-                  Foto: Acervo Jornal Glicério
-                </p>
+              {/* Color divider */}
+              <div className="flex gap-1 my-8">
+                <div className="h-[3px] w-8 bg-pernambuco-blue" />
+                <div className="h-[3px] w-8 bg-pernambuco-yellow" />
+                <div className="h-[3px] w-8 bg-pernambuco-red" />
               </div>
 
               {/* Body text */}
@@ -109,7 +103,9 @@ const ArticlePage = () => {
 
               {/* End mark */}
               <div className="flex items-center gap-3 mt-10 mb-6">
-                <div className="w-2 h-2 bg-primary" />
+                <div className="w-2 h-2 bg-pernambuco-blue" />
+                <div className="w-2 h-2 bg-pernambuco-yellow" />
+                <div className="w-2 h-2 bg-pernambuco-red" />
                 <div className="editorial-rule flex-1" />
               </div>
 
@@ -134,8 +130,8 @@ const ArticlePage = () => {
             <aside className="lg:col-span-4">
               <div className="lg:sticky lg:top-36 space-y-10">
                 {/* Author */}
-                <div>
-                  <div className="editorial-rule-accent mb-4" />
+                <div className="p-6 bg-secondary/60">
+                  <div className="h-[3px] w-10 bg-pernambuco-yellow mb-4" />
                   <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
                     Sobre o autor
                   </span>
