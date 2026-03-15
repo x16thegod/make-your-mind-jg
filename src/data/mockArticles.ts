@@ -22,6 +22,7 @@ export const categories = [
   "Opiniões",
   "Entrevistas",
   "Avisos",
+  "Programação",
 ];
 
 export const articles: Article[] = [

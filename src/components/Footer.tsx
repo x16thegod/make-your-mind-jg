@@ -80,18 +80,9 @@ const Footer = () => (
 
       <div className="h-px w-full bg-background/8 mt-14 mb-6" />
 
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-        <span className="meta-text text-background/20">
-          © 2026 Jornal Glicério · Todos os direitos reservados
-        </span>
-        <span className="meta-text text-background/20">
-          Publicado em Recife, Pernambuco
-        </span>
-      </div>
-
       {/* Dev credit */}
-      <div className="flex items-center justify-center gap-1.5 mt-2">
-        <span className="font-mono text-[10px] tracking-[0.06em] text-background/25">
+      <div className="flex items-center justify-center mb-4">
+        <span className="font-mono text-[10px] tracking-[0.06em] text-background/30">
           Developer:{" "}
           <a
             href="https://wa.me/5581998735882"
@@ -101,6 +92,15 @@ const Footer = () => (
           >
             Pedro Henrique S. de Carvalho
           </a>
+        </span>
+      </div>
+
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span className="meta-text text-background/20">
+          © 2026 Jornal Glicério · Todos os direitos reservados
+        </span>
+        <span className="meta-text text-background/20">
+          Publicado em Recife, Pernambuco
         </span>
       </div>
     </div>
