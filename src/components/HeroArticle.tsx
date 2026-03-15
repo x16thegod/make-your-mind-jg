@@ -8,7 +8,7 @@ const HeroArticle = () => {
     <Link to={`/artigo/${article.id}`} className="group block">
       <article className="relative">
         {/* Full-bleed image with cinematic overlay */}
-        <div className="relative overflow-hidden aspect-[16/10] md:aspect-[2/1] lg:aspect-[21/10]">
+        <div className="relative overflow-hidden aspect-[16/10] md:aspect-[2.1/1] lg:aspect-[2.4/1]">
           <img
             src={article.image}
             alt={article.title}

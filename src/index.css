@@ -291,6 +291,16 @@
     );
   }
 
+  /* ===== DEV CREDIT COLOR CYCLE ===== */
+  .dev-credit-cycle {
+    animation: color-cycle 6s ease-in-out infinite;
+  }
+  @keyframes color-cycle {
+    0%, 100% { color: hsl(var(--pernambuco-blue)); }
+    33% { color: hsl(var(--pernambuco-yellow)); }
+    66% { color: hsl(var(--pernambuco-red)); }
+  }
+
   /* ===== EDITORIAL STRIPE PATTERN ===== */
   .stripe-pattern {
     background-image: repeating-linear-gradient(
