@@ -4,27 +4,36 @@ import { categories } from "@/data/mockArticles";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
-    <div className="container py-14 md:py-20">
-      {/* Top section with logo */}
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
-        <div className="max-w-xs">
-          <Logo inverted />
-          <p className="mt-4 font-sans text-sm text-background/50 leading-relaxed">
-            O jornal digital da Escola José Glicério. Feito por alunos, para a comunidade escolar. Reportando o que importa desde Recife, Pernambuco.
+    {/* Pernambuco stripe */}
+    <div className="editorial-rule-rainbow" />
+
+    <div className="container py-16 md:py-20">
+      {/* Top section */}
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-12">
+        <div className="max-w-sm">
+          <Logo inverted size="default" />
+          <p className="mt-5 font-sans text-sm text-background/45 leading-relaxed">
+            O jornal digital da Escola José Glicério. Feito por alunos, para a comunidade escolar.
+            Reportando o que importa desde Recife, Pernambuco.
           </p>
+          <div className="flex gap-2 mt-5">
+            <span className="w-8 h-1 bg-pernambuco-blue" />
+            <span className="w-8 h-1 bg-pernambuco-yellow" />
+            <span className="w-8 h-1 bg-pernambuco-red" />
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-14">
           <div>
-            <h4 className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-background/30 mb-4">
+            <h4 className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-pernambuco-yellow/60 mb-5">
               Seções
             </h4>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               {categories.slice(0, 5).map((cat) => (
                 <Link
                   key={cat}
                   to={`/categoria/${encodeURIComponent(cat)}`}
-                  className="font-sans text-[13px] text-background/60 hover:text-background transition-colors"
+                  className="font-sans text-[13px] text-background/50 hover:text-background transition-colors"
                 >
                   {cat}
                 </Link>
@@ -33,15 +42,15 @@ const Footer = () => (
           </div>
 
           <div>
-            <h4 className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-background/30 mb-4">
+            <h4 className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-pernambuco-yellow/60 mb-5">
               Mais
             </h4>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               {categories.slice(5).map((cat) => (
                 <Link
                   key={cat}
                   to={`/categoria/${encodeURIComponent(cat)}`}
-                  className="font-sans text-[13px] text-background/60 hover:text-background transition-colors"
+                  className="font-sans text-[13px] text-background/50 hover:text-background transition-colors"
                 >
                   {cat}
                 </Link>
@@ -50,25 +59,27 @@ const Footer = () => (
           </div>
 
           <div>
-            <h4 className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-background/30 mb-4">
+            <h4 className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-pernambuco-yellow/60 mb-5">
               Contato
             </h4>
-            <div className="flex flex-col gap-2 font-sans text-[13px] text-background/60">
+            <div className="flex flex-col gap-2.5 font-sans text-[13px] text-background/50">
               <span>Escola José Glicério</span>
               <span>Recife, PE, Brasil</span>
-              <span>jornal@glicerio.edu.br</span>
+              <span className="hover:text-pernambuco-yellow transition-colors cursor-pointer">
+                jornal@glicerio.edu.br
+              </span>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="h-px w-full bg-background/8 mt-12 mb-6" />
+      <div className="h-px w-full bg-background/8 mt-14 mb-6" />
 
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
-        <span className="meta-text text-background/25">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+        <span className="meta-text text-background/20">
           © 2026 Jornal Glicério · Todos os direitos reservados
         </span>
-        <span className="meta-text text-background/25">
+        <span className="meta-text text-background/20">
           Publicado em Recife, Pernambuco
         </span>
       </div>

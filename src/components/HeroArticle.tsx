@@ -6,39 +6,46 @@ const HeroArticle = () => {
 
   return (
     <Link to={`/artigo/${article.id}`} className="group block">
-      <article>
-        {/* Image with overlay gradient */}
-        <div className="relative overflow-hidden bg-foreground/5">
+      <article className="relative">
+        {/* Full-bleed image with cinematic overlay */}
+        <div className="relative overflow-hidden aspect-[16/10] md:aspect-[2/1] lg:aspect-[21/10]">
           <img
             src={article.image}
             alt={article.title}
-            className="w-full aspect-[16/10] md:aspect-[2/1] object-cover image-hover"
+            className="absolute inset-0 w-full h-full object-cover image-hover"
           />
-          {/* Subtle dark gradient at bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/30 via-transparent to-transparent" />
-
-          {/* Category floating on image */}
-          <div className="absolute bottom-4 left-4">
-            <span className="category-tag bg-accent text-accent-foreground">
-              {article.category}
-            </span>
-          </div>
-        </div>
-
-        {/* Text below */}
-        <div className="mt-5">
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-bold leading-[1.08] tracking-[-0.03em] headline-hover animate-fade-up">
-            {article.title}
-          </h1>
-          <p className="mt-4 font-sans text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl animate-fade-up-delay-1">
-            {article.excerpt}
-          </p>
-          <div className="mt-4 flex items-center gap-3 meta-text animate-fade-up-delay-2">
-            <span className="text-foreground font-semibold">Por {article.author}</span>
-            <span className="text-foreground/20">|</span>
-            <span>{article.date}</span>
-            <span className="text-foreground/20">|</span>
-            <span>{article.readTime} de leitura</span>
+          {/* Dramatic gradient overlay */}
+          <div className="hero-gradient absolute inset-0" />
+          
+          {/* Yellow accent bar at top */}
+          <div className="absolute top-0 left-0 w-20 h-1 bg-pernambuco-yellow" />
+          
+          {/* Content overlay */}
+          <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10 lg:p-14">
+            <div className="max-w-3xl">
+              <span className="category-tag-red mb-4 inline-block">
+                {article.category}
+              </span>
+              <h1 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-[3.25rem] font-black leading-[1.05] tracking-[-0.03em] text-primary-foreground animate-fade-up">
+                {article.title}
+              </h1>
+              <p className="mt-4 font-sans text-base md:text-lg text-primary-foreground/75 leading-relaxed max-w-2xl animate-fade-up-delay-1 hidden sm:block">
+                {article.excerpt}
+              </p>
+              <div className="mt-4 flex items-center gap-3 animate-fade-up-delay-2">
+                <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-pernambuco-yellow font-bold">
+                  Por {article.author}
+                </span>
+                <span className="text-primary-foreground/30">·</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-primary-foreground/50">
+                  {article.date}
+                </span>
+                <span className="text-primary-foreground/30">·</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.08em] text-primary-foreground/50">
+                  {article.readTime} de leitura
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </article>
