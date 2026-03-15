@@ -1,11 +1,12 @@
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
 import { categories } from "@/data/mockArticles";
+import { Phone } from "lucide-react";
 
 const Footer = () => (
   <footer className="bg-foreground text-background">
     {/* Pernambuco stripe */}
-    <div className="editorial-rule-rainbow" />
+    <div className="editorial-rule-rainbow h-1.5" />
 
     <div className="container py-16 md:py-20">
       {/* Top section */}
@@ -65,6 +66,15 @@ const Footer = () => (
             <div className="flex flex-col gap-2.5 font-sans text-[13px] text-background/50">
               <span>Escola José Glicério</span>
               <span>Recife, PE, Brasil</span>
+              <a
+                href="https://wa.me/5581998735882"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-pernambuco-yellow transition-colors"
+              >
+                <Phone size={13} />
+                (81) 9 9873-5882
+              </a>
               <span className="hover:text-pernambuco-yellow transition-colors cursor-pointer">
                 jornal@glicerio.edu.br
               </span>
@@ -75,12 +85,22 @@ const Footer = () => (
 
       <div className="h-px w-full bg-background/8 mt-14 mb-6" />
 
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         <span className="meta-text text-background/20">
           © 2026 Jornal Glicério · Todos os direitos reservados
         </span>
         <span className="meta-text text-background/20">
           Publicado em Recife, Pernambuco
+        </span>
+      </div>
+
+      {/* Dev credit */}
+      <div className="mt-6 pt-6 border-t border-background/5 flex justify-center">
+        <span className="font-mono text-[11px] tracking-[0.08em]">
+          Dev:{" "}
+          <span className="font-bold dev-credit-cycle">
+            Pedro Henrique S. de Carvalho (x16TheGod)
+          </span>
         </span>
       </div>
     </div>

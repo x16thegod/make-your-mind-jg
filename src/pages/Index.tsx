@@ -69,8 +69,10 @@ const Index = () => {
 
         {/* ===== BLUE EDITORIAL BANNER ===== */}
         <section className="bg-pernambuco-blue relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-60 h-60 bg-pernambuco-yellow/5 -mt-20 -mr-20" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-pernambuco-yellow/5 -mt-20 -mr-20 rotate-12" />
           <div className="absolute bottom-0 left-[10%] w-2 h-2 bg-pernambuco-yellow" />
+          <div className="absolute top-1/2 right-[15%] w-1 h-1 bg-pernambuco-yellow/30" />
+          <div className="absolute bottom-[20%] right-[30%] w-40 h-px bg-pernambuco-yellow/10" />
           <div className="container py-14 md:py-20 relative z-10">
             <div className="max-w-3xl">
               <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-pernambuco-yellow/80 font-bold">
