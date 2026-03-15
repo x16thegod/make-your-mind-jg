@@ -146,6 +146,28 @@ A conquista garante à equipe uma vaga na etapa nacional, que será realizada em
     readTime: "4 min",
     image: "https://images.unsplash.com/photo-1523050854058-8df90110c476?w=800&h=600&fit=crop",
   },
+  {
+    id: "11",
+    title: "Introdução ao Python: Sua Primeira Linguagem de Programação",
+    excerpt: "Aprenda os fundamentos do Python, a linguagem mais popular do mundo, com exemplos práticos e projetos simples para iniciantes.",
+    body: "Python é a linguagem perfeita para quem está começando a programar. Neste artigo, vamos explorar variáveis, loops, condicionais e funções com exemplos do dia a dia. Ao final, você terá criado seu primeiro programa funcional.",
+    category: "Programação",
+    author: "Pedro Henrique",
+    date: "14 Mar 2026",
+    readTime: "8 min",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
+  },
+  {
+    id: "12",
+    title: "Cibersegurança para Iniciantes: Como Proteger Seus Dados Online",
+    excerpt: "Descubra as principais ameaças digitais e aprenda técnicas essenciais para manter seus dados seguros na internet.",
+    body: "A cibersegurança nunca foi tão importante. Neste guia, vamos abordar phishing, engenharia social, senhas seguras, autenticação de dois fatores e as melhores práticas para navegar com segurança. Conhecimento essencial para qualquer estudante.",
+    category: "Programação",
+    author: "Pedro Henrique",
+    date: "12 Mar 2026",
+    readTime: "6 min",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=600&fit=crop",
+  },
 ];
 
 export const getArticlesByCategory = (category: string) =>
