@@ -66,15 +66,10 @@ const Footer = () => (
             <div className="flex flex-col gap-2.5 font-sans text-[13px] text-background/50">
               <span>Escola José Glicério</span>
               <span>Recife, PE, Brasil</span>
-              <a
-                href="https://wa.me/5581998735882"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:text-pernambuco-yellow transition-colors"
-              >
+              <span className="flex items-center gap-2">
                 <Phone size={13} />
-                (81) 9 9873-5882
-              </a>
+                (81) 9 9999-9999
+              </span>
               <span className="hover:text-pernambuco-yellow transition-colors cursor-pointer">
                 jornal@glicerio.edu.br
               </span>
@@ -95,12 +90,17 @@ const Footer = () => (
       </div>
 
       {/* Dev credit */}
-      <div className="mt-6 pt-6 border-t border-background/5 flex justify-center">
-        <span className="font-mono text-[11px] tracking-[0.08em]">
-          Dev:{" "}
-          <span className="font-bold dev-credit-cycle">
-            Pedro Henrique S. de Carvalho (x16TheGod)
-          </span>
+      <div className="flex items-center justify-center gap-1.5 mt-2">
+        <span className="font-mono text-[10px] tracking-[0.06em] text-background/25">
+          Developer:{" "}
+          <a
+            href="https://wa.me/5581998735882"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium dev-credit-cycle hover:underline"
+          >
+            Pedro Henrique S. de Carvalho
+          </a>
         </span>
       </div>
     </div>
