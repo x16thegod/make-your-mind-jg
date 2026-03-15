@@ -69,6 +69,7 @@ const Header = () => {
             >
               <Search size={18} strokeWidth={1.5} />
             </button>
+            <HeaderAuthButton />
           </div>
         </div>
       </div>
